@@ -39,7 +39,7 @@ async def start(update: Update, context: ContextTypes.DEFAULT_TYPE):
     job = context.job_queue.run_repeating(send_signal, interval=120, first=123, data=chat_id)
     jobs[chat_id] = job
     
-      keyboard = [[InlineKeyboardButton("🛑 PARAR SINAIS", callback_data="stop")]]
+    keyboard = [[InlineKeyboardButton("🛑 PARAR SINAIS", callback_data="stop")]]
     await update.message.reply_text(
         "🤖 ROBÔ DOMINADO ONLINE 24H\nSinais a cada 2 minutos!",
         reply_markup=InlineKeyboardMarkup(keyboard)
